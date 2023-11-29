@@ -12,6 +12,96 @@ const questions = [
             'math.floor((math.random() * 10)) + 1', 
             'Math.floor((Math.random() * 10)) + 1'],
         correctAnswer: 'Math.floor((Math.random() * 10)) + 1'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
+    },
+    {
+        question: 'Which of the following is NOT a valid keyword for a variable?',
+        choices: [ 'const', 'let', 'variable', 'var'],
+        correctAnswer: 'variable'    
     }
 ]
 
