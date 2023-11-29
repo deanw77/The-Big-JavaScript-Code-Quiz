@@ -30,7 +30,7 @@ const questions = [
     },
     {
         question: 'Java and JavaScript are the same language. Java is just abbreviated.',
-        choices: [ 'True', 'False'],
+        choices: [ 'True', 'False', '', ''],
         correctAnswer: 'False'    
     },
     {

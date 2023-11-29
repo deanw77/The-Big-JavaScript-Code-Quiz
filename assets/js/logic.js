@@ -3,9 +3,13 @@ const startScreen = document.querySelector("#start-screen");
 const questionsList = document.querySelector("#questions");
 const questionTitle = document.querySelector("#question-title");
 const choices = document.querySelector("#choices");
-const goodSound = document.getElementById("correctAudio");
-const badSound = document.getElementById("incorrectAudio");
+const goodSound = document.querySelector("#correctAudio");
+const badSound = document.querySelector("#incorrectAudio");
+const timer = document.querySelector("#time");
+
 let counter = 0;
+let secondsLeft = 120;
+let score = 0;
 
 startButton.addEventListener("click", function() {
     startScreen.style.display = "none";
@@ -14,7 +18,8 @@ startButton.addEventListener("click", function() {
 });
 
 function startQuiz() {
-        scrollQuestions(counter);   
+    scrollQuestions(counter);
+    runTimer();   
 }
 
 function scrollQuestions(counter) {
@@ -23,10 +28,13 @@ function scrollQuestions(counter) {
     choices.textContent = '';
     for (let i = 0; i < questions[counter].choices.length; i++) {
         answrbtn = document.createElement('button');
+        answrbtn.setAttribute('id', 'answr'+i);
         answrbtn.textContent = questions[counter].choices[i];
         answrbtn.style.minWidth = '120px';
-        answrbtn.setAttribute('id', 'answr'+i);
         choices.appendChild(answrbtn);
+        if ( answrbtn.textContent === '') {
+            answrbtn.setAttribute("style", "display:none;");
+        }
     }
 
     const answerOne = document.querySelector('#answr0');
@@ -37,42 +45,45 @@ function scrollQuestions(counter) {
 
     answerOne.addEventListener("click", function() {
         let text = answerOne.textContent;
-        if ( text === correctAnswer ) {
-            goodSound.play();
-            counter++;
-            scrollQuestions(counter);  
-        } else {
-            badSound.play();
-        }
+        if ( text === correctAnswer ) { nailedIt(); } 
+        else { unlucky(); }
     });
     answerTwo.addEventListener("click", function() {
         let text = answerTwo.textContent;
-        if ( text === correctAnswer ) {
-            goodSound.play();
-            counter++;
-            scrollQuestions(counter); 
-        } else {
-            badSound.play();
-        }
+        if ( text === correctAnswer ) { nailedIt(); } 
+        else { unlucky(); }
     });
     answerThree.addEventListener("click", function() {
         let text = answerThree.textContent;
-        if ( text === correctAnswer ) {
-            goodSound.play();
-            counter++;
-            scrollQuestions(counter); 
-        } else {
-            badSound.play();
-        }
+        if ( text === correctAnswer ) { nailedIt(); } 
+        else { unlucky(); }
     });
     answerFour.addEventListener("click", function() {
         let text = answerFour.textContent;
-        if ( text === correctAnswer ) {
-            goodSound.play();
-            counter++;
-            scrollQuestions(counter); 
-        } else {
-            badSound.play();
-        }
+        if ( text === correctAnswer ) { nailedIt(); } 
+        else { unlucky(); }
     });
+}
+
+function nailedIt() {
+    goodSound.play();
+    counter++;
+    scrollQuestions(counter);
+    score = score + 5; 
+}
+
+function unlucky() {
+    badSound.play();
+    secondsLeft = secondsLeft - 5;
+}
+
+function runTimer() {
+    let timerInterval = setInterval(function() {
+    secondsLeft--;
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+    }
+    timer.textContent = secondsLeft;
+  }, 1000);
 }
