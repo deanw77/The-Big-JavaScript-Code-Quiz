@@ -14,94 +14,43 @@ const questions = [
         correctAnswer: 'Math.floor((Math.random() * 10)) + 1'    
     },
     {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
+        question: 'Which of the following is NOT a valid way to access an element?',
+        choices: [ 'querySelector', 'queryId', 'getElementById', 'querySelectorAll'],
+        correctAnswer: 'queryId'    
     },
     {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
+        question: 'Which would you use to insert text content into an element?',
+        choices: [ 'textContent', 'addText', 'createElement', 'setText'],
+        correctAnswer: 'textContent'    
     },
     {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
+        question: 'You want a loop, But, you want to ensure the code inside ALWAYS runs at least once. What do you use?',
+        choices: [ 'for', 'do-while', 'while', 'switch'],
+        correctAnswer: 'do-while'    
     },
     {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
+        question: 'Java and JavaScript are the same language. Java is just abbreviated.',
+        choices: [ 'True', 'False'],
+        correctAnswer: 'False'    
     },
     {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
+        question: 'Which variable type CANNOT be changed once declared?',
         choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
+        correctAnswer: 'const'    
     },
     {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
+        question: 'Which  is the correct way to declare an empty array?',
+        choices: [ 'const = ( );', 'const = " ";', 'const = { };', 'const = [ ];'],
+        correctAnswer: 'const = [ ];'    
     },
     {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
+        question: 'Which of the following is not a valid variable type in javaScript?',
+        choices: [ 'boolean', 'img', 'number', 'string'],
+        correctAnswer: 'img'    
     },
     {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
-    },
-    {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
-    },
-    {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
-    },
-    {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
-    },
-    {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
-    },
-    {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
-    },
-    {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
-    },
-    {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
-    },
-    {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
-    },
-    {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
-    },
-    {
-        question: 'Which of the following is NOT a valid keyword for a variable?',
-        choices: [ 'const', 'let', 'variable', 'var'],
-        correctAnswer: 'variable'    
+        question: 'When used as an arithmetic operator, `%` gives you the ...?',
+        choices: [ 'Modulus', 'Percent', 'Fraction', 'Increment'],
+        correctAnswer: 'Modulus'    
     }
 ]
-

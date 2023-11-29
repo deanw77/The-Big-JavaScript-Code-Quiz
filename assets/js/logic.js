@@ -5,7 +5,6 @@ const questionTitle = document.querySelector("#question-title");
 const choices = document.querySelector("#choices");
 const goodSound = document.getElementById("correctAudio");
 const badSound = document.getElementById("incorrectAudio");
-
 let counter = 0;
 
 startButton.addEventListener("click", function() {
