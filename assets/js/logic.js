@@ -1,14 +1,17 @@
 const startButton = document.querySelector("#start");
 const startScreen = document.querySelector("#start-screen");
+const endScreen = document.querySelector("#end-screen")
 const questionsList = document.querySelector("#questions");
 const questionTitle = document.querySelector("#question-title");
 const choices = document.querySelector("#choices");
 const goodSound = document.querySelector("#correctAudio");
 const badSound = document.querySelector("#incorrectAudio");
 const timer = document.querySelector("#time");
+const finalScore = document.querySelector("#final-score");
+
 
 let counter = 0;
-let secondsLeft = 120;
+let secondsLeft = 60;
 let score = 0;
 
 startButton.addEventListener("click", function() {
@@ -66,14 +69,14 @@ function scrollQuestions(counter) {
 }
 
 function nailedIt() {
-    goodSound.play();
+    //goodSound.play();
     counter++;
     scrollQuestions(counter);
     score = score + 5; 
 }
 
 function unlucky() {
-    badSound.play();
+    //badSound.play();
     secondsLeft = secondsLeft - 5;
 }
 
@@ -83,7 +86,14 @@ function runTimer() {
 
     if(secondsLeft === 0) {
       clearInterval(timerInterval);
+      endGame();
     }
     timer.textContent = secondsLeft;
   }, 1000);
+}
+
+function endGame(){
+    questionsList.style.display = "none";
+    endScreen.style.display = "block";
+    finalScore.innerHTML = score;
 }
