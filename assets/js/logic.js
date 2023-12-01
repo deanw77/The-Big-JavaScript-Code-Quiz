@@ -8,21 +8,65 @@ const goodSound = document.querySelector("#correctAudio");
 const badSound = document.querySelector("#incorrectAudio");
 const timer = document.querySelector("#time");
 const finalScore = document.querySelector("#final-score");
+const initials = document.querySelector("#initials")
+const submit = document.querySelector("#submit");
+const feedback = document.querySelector("#feedback");
+const wellDone = document.querySelector('#wellDone');
+const playAgain = document.querySelector('#playAgain');
 
 let counter = 0;
 let secondsLeft = 60;
 let score = 0;
 let questionsCounter = 0;
+let highScoreStore = [];
+let initialsStore = [];
 
-startButton.addEventListener("click", function() {
+init();
+
+function init() {
+    highScoreStore = JSON.parse(localStorage.getItem("scoreStore"));
+    initialsStore = JSON.parse(localStorage.getItem("initials"));
+}
+
+startButton.addEventListener("click", function(event) {
+    event.preventDefault();
     startScreen.style.display = "none";
     questionsList.style.display = "block";
     startQuiz();
 });
 
+submit.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    feedback.classList.remove("hide");
+    wellDone.textContent = `Well done. Your score has been recorded`;
+
+    localStorage.setItem("scoreStore", JSON.stringify(highScoreStore));
+    initialsStore.push(initials.value);
+    localStorage.setItem("initials", JSON.stringify(initialsStore));
+});
+
+playAgain.addEventListener('click', function(event) {
+    event.preventDefault();
+    restart();
+});
+
 function startQuiz() {
+    //highScoreStore = JSON.parse(localStorage.getItem("scoreStore"));
+    //initialsStore = JSON.parse(localStorage.getItem("initials"));    
     scrollQuestions(counter);
     runTimer();   
+}
+
+function restart() {
+    feedback.classList.add("hide");
+    questionsList.style.display = "block";
+    endScreen.style.display = "none";
+    counter = 0;
+    questionsCounter = 0;
+    secondsLeft = 60;
+    score = 0;
+    startQuiz()
 }
 
 function scrollQuestions(counter) {
@@ -75,8 +119,8 @@ function scrollQuestions(counter) {
 function nailedIt() {
     goodSound.play();
     counter++;
+    score = score + 5;
     scrollQuestions(counter);
-    score = score + 5; 
 }
 
 function unlucky() {
@@ -88,7 +132,7 @@ function runTimer() {
     let timerInterval = setInterval(function() {
     secondsLeft--;
 
-    if(secondsLeft === 0) {
+    if(secondsLeft <= 0) {
       clearInterval(timerInterval);
       endGame();
     }
@@ -100,4 +144,5 @@ function endGame(){
     questionsList.style.display = "none";
     endScreen.style.display = "block";
     finalScore.innerHTML = score;
+    highScoreStore.push(score);
 }
