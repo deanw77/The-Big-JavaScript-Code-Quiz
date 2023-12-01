@@ -176,9 +176,6 @@ submit.addEventListener("click", function (event) {
 
     initialsStore.push(initials.value);
     localStorage.setItem("initials", JSON.stringify(initialsStore));
-
-    console.log(initialsStore);
-    console.log(highScoreStore);
 });
 
 // If playing again, rerun the init then run the restart

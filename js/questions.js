@@ -54,5 +54,34 @@ const questions = [
         question: 'When used as an arithmetic operator, `%` gives you the ...?',
         choices: [ 'Modulus', 'Percent', 'Fraction', 'Increment'],
         correctAnswer: 'Modulus'    
+    },
+    {
+        question: 'JavaScript is used primarily server-side, but can also be used client-side.',
+        choices: [ 'True', 'False', '', ''],
+        correctAnswer: 'True'    
+    },
+    {
+        question: 'An infinite loop that never exits..',
+        choices: [ 
+            'Can end the world', 
+            'Can crash your program', 
+            'Can allow computers to take over the world', 
+            'Can turn you into a zombie'],
+        correctAnswer: 'Can crash your program'    
+    },
+    {
+        question: 'What is the correct tag to insert JavaScript into HTML?',
+        choices: [ '<Java>', '<javascript>', '<link>', '<script>'],
+        correctAnswer: '<script>'    
+    },
+    {
+        question: 'How do write Error in an alert box?',
+        choices: [ 'alert("Error");', 'alertBox("Error");', 'alert= "Error";', 'Alert(){Error};'],
+        correctAnswer: 'alert("Error");'    
+    },
+    {
+        question: 'All things considered, JavaScript is pretty Awesome',
+        choices: [ 'False', 'True', '', ''],
+        correctAnswer: 'True'    
     }
 ]
