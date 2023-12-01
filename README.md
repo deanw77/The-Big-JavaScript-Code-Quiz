@@ -1,88 +1,49 @@
-# Module 6 Challenge Web APIs: Code Quiz
+# The Big JavaScript Code Quiz
 
-## Your Task
+Build a timed JavaScript quiz that scores the high scores along with the user initials
 
-As you proceed in your journey to becoming a front-end web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
+## User Requirements
 
-To help you become familiar with these tests and give you a chance to apply the skills from this module, this week’s challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. This week’s coursework has taught you all the skills you need to succeed in this challenge.
+1) A working quiz that moves from question to question and records the users score.
+2) Quiz will be timed and the remaining time will be the final score.
+3) High scores need to be stored in local storage and displayed to High Scores page.
+4) Implement sounds to play for correct and incorrect answers.
+5) Ensure High Scores are displayed in decending order. 
+6) Show an option to play again at the end of the game.
 
+## Problems Solved
 
-## User Story
+1) By far the biggest problem I had - combining the two arrays (scores and initials) into one array and then sorting them in decending order. 😡 Frustrating! But got it figured out, lesson learnt = Persevere! 
+2) Local Storage, both storing and retrieving data presented difficulties. More practice with that definitely needed. 
+3) Play Again button along with a message confirming score has been recorded
+4) A bit of trial and error getting ratio of questions available to time available. I didn't want tose less comfortable with JavaScript to be unable to get the end of questions. 
+5) Honestly - one problem was definitely fighting the urge to say "that'll do", giving up on a feature. Take a step back, write more psuedocode, then come back and fix the problem. 
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+## Hosted Site
 
-## Acceptance Criteria
+Try the quiz here: <br>
+https://deanw77.github.io/The-Big-JavaScript-Code-Quiz/
 
-Create a code quiz that contains the following requirements:
+### Project Overview
 
-* A start button that when clicked a timer starts and the first question appears.
- 
-  * Questions contain buttons for each answer.
-  * 
-  * When answer is clicked, the next question appears
-  * 
-  * If the answer clicked was incorrect then subtract time from the clock
+In a Word - Brutal ! <br>
 
-* The quiz should end when all questions are answered or the timer reaches 0.
+That was by far the most challenging assignment so far. It both tested my understanding of everything learnt and pushed me to turn to google to learn some more. After this, I am certainly getting more comfortable with handling date and moving between arrays and objects. 
+Huge learning curve but also huge sense of achievement when i finally got the application working as I wanted. 
 
-  * When the game ends, it should display their score and give the user the ability to save their initials and their score
-  
-## Mock-Up
+### Final Result
 
-The following animation demonstrates the application functionality:
+![Quiz Page](images/quizPage.png)
+![End of Game Page](images/finishPage.png)
+![High Scores Page](images/scoresPage.png)
 
-![Animation of code quiz. Presses button to start quiz. Clicks the button for the answer to each question, displays if answer was correct or incorrect. Quiz finishes and displays high scores. User adds their intials, then clears their intials and starts over.](./assets/08-web-apis-challenge-demo.gif)
+### Going Forward
 
-## Grading Requirements
+Due to how challenging I found this project it's certainly one that I'll want on my portfolio. Prior to that though there are some changes and improvements I wish to implement: 
 
-This challenge is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+* Improve the scrollQuestions() function to be more efficient.
+    * I need to change the code to avoid the four seperate event listeners to reduce code length.
+* Add options for HTML and CSS quizzes too.
+* Change the scoring back to points per correct answer.
+    * It was initially done like this and changed due to assignment requirements, but I prefer the points per question with additional points for remaining time.
+* Improve the user interface.
