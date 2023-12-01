@@ -18,7 +18,7 @@ function saveScores() {
             console.log(k, initialsArray[k] + ' - ' + scoreArray[k])
             );
         
-            sortArray(scoreArray).forEach(k=>
+            sortArray(scoreArray).forEach(k=>#
             sortedArray.push(scoreArray[k] + ' - ' + initialsArray[k])
             );
     }

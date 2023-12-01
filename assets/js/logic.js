@@ -26,9 +26,13 @@ init();
 function init() {
     if (localStorage.getItem("scoreStore") != null ){
         highScoreStore = JSON.parse(localStorage.getItem("scoreStore"));
+    } else {
+        highScoreStore = 00;
     }
     if (localStorage.getItem("initials") != null ){
         initialsStore = JSON.parse(localStorage.getItem("initials"));
+    } else {
+        initialsStore = AA;
     }
     
 }
