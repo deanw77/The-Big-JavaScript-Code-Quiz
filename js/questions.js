@@ -1,3 +1,5 @@
+// Create questions using an array of objects
+// Each question object should contain an array of answers for the choices
 const questions = [
     {
         question: 'Which of the following is NOT a valid keyword for a variable?',

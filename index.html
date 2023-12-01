@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <title>Coding Quiz</title>
 
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Add favicon to stop annoying error in console -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
 
   <body>
@@ -41,15 +43,16 @@
       </div>
 
       <div id="feedback" class="feedback hide">
-        <h3 id="wellDone">Well Done</h3>
+        <!-- Add a score recorded confirmation and a Play Again button -->
+        <h3 id="wellDone"></h3>
         <button id="playAgain">Play Again</button>
       </div>
     </div>
 
-    <audio id="correctAudio" src="assets/sfx/correct.wav"></audio>
-    <audio id="incorrectAudio" src="assets/sfx/incorrect.wav"></audio>
+    <audio id="correctAudio" src="sfx/correct.wav"></audio>
+    <audio id="incorrectAudio" src="sfx/incorrect.wav"></audio>
 
-    <script src="./assets/js/questions.js"></script>
-    <script src="./assets/js/logic.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/logic.js"></script>
   </body>
 </html>
