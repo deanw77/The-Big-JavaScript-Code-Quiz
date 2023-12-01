@@ -1,87 +1,96 @@
+"use strict";
+
 const startButton = document.querySelector("#start");
 const startScreen = document.querySelector("#start-screen");
-const endScreen = document.querySelector("#end-screen")
 const questionsList = document.querySelector("#questions");
 const questionTitle = document.querySelector("#question-title");
 const choices = document.querySelector("#choices");
+const endScreen = document.querySelector("#end-screen")
+const finalScore = document.querySelector("#final-score");
+const timer = document.querySelector("#time");
+const initials = document.querySelector("#initials")
 const goodSound = document.querySelector("#correctAudio");
 const badSound = document.querySelector("#incorrectAudio");
-const timer = document.querySelector("#time");
-const finalScore = document.querySelector("#final-score");
-const initials = document.querySelector("#initials")
-const submit = document.querySelector("#submit");
-const feedback = document.querySelector("#feedback");
-const wellDone = document.querySelector('#wellDone');
-const playAgain = document.querySelector('#playAgain');
+// const submit = document.querySelector("#submit");
+// const feedback = document.querySelector("#feedback");
+// const wellDone = document.querySelector('#wellDone');
+// const playAgain = document.querySelector('#playAgain');
 
 let counter = 0;
-let secondsLeft = 60;
+let secondsLeft = 30;
 let score = 0;
 let questionsCounter = 0;
+let answrbtn;
 let highScoreStore = [];
 let initialsStore = [];
 
 init();
 
 function init() {
-    if (localStorage.getItem("scoreStore") != null ){
-        highScoreStore = JSON.parse(localStorage.getItem("scoreStore"));
-    } else {
-        highScoreStore = 00;
-    }
-    if (localStorage.getItem("initials") != null ){
-        initialsStore = JSON.parse(localStorage.getItem("initials"));
-    } else {
-        initialsStore = AA;
-    }
+    highScoreStore = [];
+    initialsStore = [];
     
+    let storedHighScores = JSON.parse(localStorage.getItem("highScores"));
+    let storedInitials = JSON.parse(localStorage.getItem("initials"));
+
+    if (storedHighScores !== null) {
+        highScoreStore = storedHighScores;
+    }
+    if (storedInitials !== null) {
+        initialsStore = storedInitials;
+    }
 }
 
 startButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    startScreen.style.display = "none";
-    questionsList.style.display = "block";
-    startQuiz();
+     event.preventDefault();
+     startScreen.style.display = "none";
+     questionsList.style.display = "block";
+     startQuiz();
 });
 
 submit.addEventListener('click', function(event) {
-    event.preventDefault();
+     event.preventDefault();
+     init();
 
-    feedback.classList.remove("hide");
-    wellDone.textContent = `Well done. Your score has been recorded`;
+     feedback.classList.remove("hide");
+     wellDone.textContent = `Well done. Your score has been recorded`;
 
-    localStorage.setItem("scoreStore", JSON.stringify(highScoreStore));
-    initialsStore.push(initials.value);
-    localStorage.setItem("initials", JSON.stringify(initialsStore));
+     highScoreStore.push(score);
+     localStorage.setItem("highScores", JSON.stringify(highScoreStore));
+
+     initialsStore.push(initials.value);
+     localStorage.setItem("initials", JSON.stringify(initialsStore));
+
+     console.log(initialsStore);
+     console.log(highScoreStore);
 });
 
 playAgain.addEventListener('click', function(event) {
     event.preventDefault();
+    init();
     restart();
 });
 
-function startQuiz() {
-    //highScoreStore = JSON.parse(localStorage.getItem("scoreStore"));
-    //initialsStore = JSON.parse(localStorage.getItem("initials"));    
+function startQuiz() {    
     scrollQuestions(counter);
     runTimer();   
 }
 
 function restart() {
-    feedback.classList.add("hide");
-    questionsList.style.display = "block";
-    endScreen.style.display = "none";
-    counter = 0;
-    questionsCounter = 0;
-    secondsLeft = 60;
-    score = 0;
-    startQuiz()
+     feedback.classList.add("hide");
+     questionsList.style.display = "block";
+     endScreen.style.display = "none";
+     counter = 0;
+     questionsCounter = 0;
+     secondsLeft = 30;
+     score = 0;
+     startQuiz()
 }
 
 function scrollQuestions(counter) {
-    if (questionsCounter < questions.length) {
-        questionTitle.innerHTML = questions[counter].question;
-        choices.textContent = '';
+     if (questionsCounter < questions.length) {
+         questionTitle.innerHTML = questions[counter].question;
+         choices.textContent = '';
         for (let i = 0; i < questions[counter].choices.length; i++) {
             answrbtn = document.createElement('button');
             answrbtn.setAttribute('id', 'answr'+i);
@@ -120,7 +129,8 @@ function scrollQuestions(counter) {
             else { unlucky(); }
         });
         questionsCounter += 1;  
-    } else {
+     } else {
+        
         endGame();
     }
 }
@@ -150,8 +160,8 @@ function runTimer() {
 }
 
 function endGame(){
+    init();
     questionsList.style.display = "none";
     endScreen.style.display = "block";
     finalScore.innerHTML = score;
-    highScoreStore.push(score);
 }

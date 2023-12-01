@@ -1,40 +1,40 @@
 const highScores = document.querySelector("#highscores");
+const clear = document.querySelector("#clear");
 
-let scoreStore = localStorage.getItem("scoreStore");
-let initialsStore = localStorage.getItem("initials");
+let scoreArray = JSON.parse(localStorage.getItem("highScores"));
+let initialsArray = JSON.parse(localStorage.getItem("initials"));
 
-let scoreArray = JSON.parse(scoreStore);
-let initialsArray = JSON.parse(initialsStore);
+clear.addEventListener('click', function() {
+    localStorage.clear();
+    location.reload();
+});
 
 function saveScores() {
 
-    const sortedArray = []
-    let sortArray
-    if ( scoreStore != null){
-        sortArray=arr=>arr.map((v,i)=>
-        ({v,i})).sort((a,b)=> typeof a.v=="string"? a.v.localeCompare(b.v) : b.v-a.v).map(v=>v.i);
-    
-        sortArray(scoreArray).forEach(k=>
-            console.log(k, initialsArray[k] + ' - ' + scoreArray[k])
-            );
-        
-            sortArray(scoreArray).forEach(k=>#
-            sortedArray.push(scoreArray[k] + ' - ' + initialsArray[k])
-            );
+    let combineArrays = [];
+    let eachUser = {};
+    if (scoreArray !== null) {
+        for (let i = 0; i < scoreArray.length; i++) {
+            let score = scoreArray[i];
+            let name = initialsArray[i];
+            eachUser = {score, name};
+            combineArrays.push(eachUser);
+        }
     }
-    
 
-    
+    combineArrays.sort(function (a, b) {
+        return b.score - a.score;
+    });
 
     let scoreCount = 0;
-    if ( sortedArray.length > 10 ) {
+    if ( combineArrays.length > 10 ) {
         scoreCount = 10;
     } else {
-        scoreCount = sortedArray.length
+        scoreCount = combineArrays.length
     }
     for (let i = 0; i < scoreCount; i++) {
         listItem = document.createElement('li');
-        listItem.textContent = sortedArray[i];
+        listItem.textContent = combineArrays[i].score + " - " +combineArrays[i].name;
         highScores.appendChild(listItem);
     }
 }
