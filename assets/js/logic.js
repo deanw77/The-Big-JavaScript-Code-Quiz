@@ -24,8 +24,13 @@ let initialsStore = [];
 init();
 
 function init() {
-    highScoreStore = JSON.parse(localStorage.getItem("scoreStore"));
-    initialsStore = JSON.parse(localStorage.getItem("initials"));
+    if (localStorage.getItem("scoreStore") != null ){
+        highScoreStore = JSON.parse(localStorage.getItem("scoreStore"));
+    }
+    if (localStorage.getItem("initials") != null ){
+        initialsStore = JSON.parse(localStorage.getItem("initials"));
+    }
+    
 }
 
 startButton.addEventListener("click", function(event) {

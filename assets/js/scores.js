@@ -8,20 +8,23 @@ let initialsArray = JSON.parse(initialsStore);
 
 function saveScores() {
 
-    var nam=['eins','zwei','drei', 'ssss'];
-    var num=[10,200,30, 57];
-
     const sortedArray = []
-    const sortArray=arr=>arr.map((v,i)=>
-    ({v,i})).sort((a,b)=> typeof a.v=="string"? a.v.localeCompare(b.v) : b.v-a.v).map(v=>v.i);
+    let sortArray
+    if ( scoreStore != null){
+        sortArray=arr=>arr.map((v,i)=>
+        ({v,i})).sort((a,b)=> typeof a.v=="string"? a.v.localeCompare(b.v) : b.v-a.v).map(v=>v.i);
+    
+        sortArray(scoreArray).forEach(k=>
+            console.log(k, initialsArray[k] + ' - ' + scoreArray[k])
+            );
+        
+            sortArray(scoreArray).forEach(k=>
+            sortedArray.push(scoreArray[k] + ' - ' + initialsArray[k])
+            );
+    }
+    
 
-    sortArray(scoreArray).forEach(k=>
-    console.log(k, initialsArray[k] + ' - ' + scoreArray[k])
-    );
-
-    sortArray(scoreArray).forEach(k=>
-    sortedArray.push(scoreArray[k] + ' - ' + initialsArray[k])
-    );
+    
 
     let scoreCount = 0;
     if ( sortedArray.length > 10 ) {
